@@ -22,3 +22,4 @@ git add *object name*
 #remove file from filesystem and git repository`
 git rm file1.txt
 git commit -m "remove file1.txt"
+git add .

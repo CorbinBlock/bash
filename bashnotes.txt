@@ -1,2 +1,2 @@
 bash notes 2020-11-15
-echo  >> bashnotes.txt
+echo "Insert text here"" >> bashnotes.txt #append line to the end of file as last row
