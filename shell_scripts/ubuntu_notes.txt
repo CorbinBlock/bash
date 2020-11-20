@@ -1,0 +1,56 @@
+sudo apt install vim
+cd /usr/local/bin
+vim ssh.sh
+#!/bin/bash
+sudo ssh -i '/.pem'.us-east-2.compute.amazonaws.com
+
+top -i
+-i option ignores idle processes 
+view memory and CPU usage
+
+restart gnome shell
+ALT+F2 #command mode
+r
+
+#command source:
+#https://askubuntu.com/questions/333287/how-to-fix-external-hard-disk-read-only
+#remount drive with read/write permissions
+sudo mount -o remount,uid=1000,gid=1000,rw '/media/corbinblock/SSD WD 1TB/
+'
+
+#20201107
+#configure and install sendmail
+#source url - https://kenfavors.com/code/how-to-install-and-configure-sendmail-on-ubuntu/
+
+#ubuntu version:
+#cat /etc/os-release
+#NAME="Ubuntu"
+#VERSION="20.10 (Groovy Gorilla)"
+#ID=ubuntu
+
+sudo apt-get install sendmail
+hostname
+#local hostname - 
+sudo vim /etc/hosts
+localhost
+sudo sendmailconfig
+#answer 'Y' to everything
+
+sudo service apache2 restart
+
+#sh url source - https://superuser.com/questions/408890/what-is-the-purpose-of-the-sh-command
+
+1) What is the purpose of the sh command when used interactively? Provides a new environment context, so if you wanted to experiment with some environment variable setting, you could. And when you were done, exit out and no harm done.
+
+Also, if you were in a different shell like zsh or csh, and wanted to execute in a sh shell, this would switch you.
+
+2) When used in a bash script like you have above, it will again provide a contained environment context for "command" to run in. You can also use it with the
+
+#!/bin/bash
+sh -c "command" &
+and fork off "command" to run in parallel with the rest of your script.
+3) I would say, if it is something that specifically needs bash, then explicitly put it in your hash bang line. But since on most later *nix systems sh is equivalent to bash, it is probably not necessary.
+
+#install openssh 
+apt-get install openssh-server
+sudo systemctl enable ssh
