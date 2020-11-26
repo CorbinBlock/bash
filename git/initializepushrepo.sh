@@ -23,3 +23,6 @@ git add *object name*
 git rm file1.txt
 git commit -m "remove file1.txt"
 git add .
+
+#print diff of local vs remote branch
+git diff master origin/master
